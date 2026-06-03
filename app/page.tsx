@@ -2,64 +2,114 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <main className="min-h-screen bg-white text-gray-900">
+      {/* HERO */}
+      <section className="flex flex-col items-center justify-center text-center h-screen px-6">
+        <h1 className="text-5xl font-bold">Front-End Developer</h1>
+
+        <p className="mt-4 text-lg text-gray-600 max-w-xl">
+          Building modern, responsive web applications using React, Next.js, and
+          Tailwind CSS.
+        </p>
+
+        <div className="mt-6 flex gap-4">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#projects"
+            className="px-6 py-3 bg-black text-white rounded-xl"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            View Projects
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+          <a href="#contact" className="px-6 py-3 border rounded-xl">
+            Contact Me
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* ABOUT */}
+      <section id="about" className="px-10 py-20 bg-gray-50">
+        <h2 className="text-3xl font-bold">About Me</h2>
+
+        <p className="mt-4 text-gray-600 max-w-3xl">
+          I am a Front-End Developer with experience in React and Next.js,
+          focused on building clean, accessible, and user-friendly web
+          applications. I enjoy turning ideas into interactive digital
+          experiences.
+        </p>
+      </section>
+
+      {/* SKILLS */}
+      <section className="px-10 py-20">
+        <h2 className="text-3xl font-bold">Skills</h2>
+
+        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            "React",
+            "Next.js",
+            "JavaScript",
+            "TypeScript",
+            "Tailwind CSS",
+            "HTML",
+            "CSS",
+            "Git / GitHub",
+          ].map((skill) => (
+            <div
+              key={skill}
+              className="p-4 border rounded-xl text-center hover:shadow-md transition"
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="px-10 py-20 bg-gray-50">
+        <h2 className="text-3xl font-bold">Projects</h2>
+
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          {/* Project 1 */}
+          <div className="p-6 bg-white border rounded-xl">
+            <h3 className="text-xl font-semibold">Didymus Project</h3>
+            <p className="text-gray-600 mt-2">
+              Church-based web platform built with Next.js and Tailwind CSS
+              featuring sermons, events, and accessibility features.
+            </p>
+            <p className="text-sm text-gray-500 mt-3">
+              Next.js • React • Tailwind • APIs
+            </p>
+          </div>
+
+          {/* Project 2 */}
+          <div className="p-6 bg-white border rounded-xl">
+            <h3 className="text-xl font-semibold">Portfolio Website</h3>
+            <p className="text-gray-600 mt-2">
+              Personal developer portfolio showcasing modern UI and responsive
+              design.
+            </p>
+            <p className="text-sm text-gray-500 mt-3">Next.js • Tailwind</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section id="contact" className="px-10 py-20 text-center">
+        <h2 className="text-3xl font-bold">Contact</h2>
+
+        <p className="mt-4 text-gray-600">
+          Let’s connect for opportunities or collaboration.
+        </p>
+
+        <div className="mt-6 space-y-2">
+          <p>Email: annettedattel@gmail.com</p>
+          <p>GitHub: https://github.com/AnnetteGeorge</p>
+          <p>LinkedIn: your-linkedin-url</p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-10 text-center text-gray-500 border-t">
+        © 2026 Your Name. Built with Next.js.
+      </footer>
+    </main>
   );
 }
